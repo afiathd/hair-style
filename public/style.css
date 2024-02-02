@@ -1,0 +1,105 @@
+/* CSS RESET */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d5bf955e;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.normal-width {
+    width: min(90%, 1680px);
+}
+
+header {
+    background-color: black;
+    height: 120px;
+    /*! justify-content: space-between; */
+    align-items: center;
+}
+
+
+.header-ct {
+    height: 100%;
+    justify-content: space-between;
+}
+
+.header-ct ul {justify-content: space-between;align-items: center;height: 200px;}
+
+.header-ct li {
+    color: white;
+    list-style: none;
+    font-size: 9rem;
+    color: #ffffffa1;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    /*! width: 80%; */
+    padding-block: 10px;
+    justify-content: space-between;
+}
+
+.nav-item {
+    background-color: #dfdfdf70;
+    width: 180px;
+    min-width: 110px;
+    height: 35px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px black solid;
+    /*! border-radius: 8px; */
+    cursor: pointer;
+}
+
+main {
+    align-items: center;
+}
+
+.hero {
+    background: url(/vizsgamunka/assets/images/hero1.webp) center/cover;
+    width: 100vw;
+    height: 280px;
+}
+
+
+#galery-ct {
+    width: 90%;
+    margin-block: 20px;
+}
+
+#about-ct {
+    width: 90%;
+    margin-block: 20px;
+}
+
+.footer {
+    margin-block: 20px;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+#contact-ct {}
+
+

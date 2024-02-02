@@ -1,0 +1,52 @@
+*
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #d5bf955e;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.normal-width {
+    width: min(90%, 1680px);
+}
+
+.content{}
+
+.container{margin: 50px;}
+
+.date-ct{justify-content: center;}
+
+.worker-ct{}
+
+.date-ct{}
+
+.date{
+  margin-inline: 100px;
+}
+
+.prev{
+  cursor: pointer;
+}
+
+.next{
+  cursor: pointer;
+}
+
+.worker{margin-inline: 10%;}
+
+.appointment{margin-block: 30px;}

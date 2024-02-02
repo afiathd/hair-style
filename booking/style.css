@@ -1,0 +1,240 @@
+/* CSS RESET */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d5bf955e;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.normal-width {
+    width: min(90%, 1680px);
+}
+
+header {
+    background-color: black;
+    height: 120px;
+    /*! justify-content: space-between; */
+    align-items: center;
+}
+
+
+.header-ct {
+    height: 100%;
+    justify-content: space-between;
+}
+
+.header-ct ul {
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+}
+
+.header-ct li {
+    color: white;
+    list-style: none;
+    font-size: 3rem;
+    color: #ffffffa1;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    /*! width: 80%; */
+    padding-block: 10px;
+    justify-content: space-between;
+}
+
+.nav-item {
+    background-color: #dfdfdf70;
+    width: 180px;
+    min-width: 110px;
+    height: 35px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px black solid;
+    /*! border-radius: 8px; */
+    cursor: pointer;
+}
+
+main {
+    align-items: center;
+}
+
+.hero {
+    /*! background: url(/booking/assets/images/hero1.webp) center/cover; */
+    width: 100vw;
+    height: 120px;
+}
+
+
+#galery-ct {
+    width: 90%;
+    margin-block: 20px;
+}
+
+#about-ct {
+    width: 90%;
+    margin-block: 20px;
+}
+
+.footer {
+    margin-block: 20px;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+#contact-ct {}
+
+
+/* booking app */
+
+#content {
+    margin-block: 25px;
+    justify-content: space-between;
+}
+
+#booking-ct {}
+
+.select {}
+
+.option {
+    width: 200px;
+    height: 60px;
+    background: azure;
+    margin-block: 20px;
+    display: grid;
+    place-content: center;
+    min-width: 300px;
+}
+
+.option svg {
+    fill: rgba(255, 255, 255, 0.6);
+    height: 200px;
+    width: 160px;
+}
+
+.left {
+    height: 700px;
+    width: 35%;
+    position: relative;
+    cursor: pointer;
+}
+
+#man {
+    background: url('/booking/assets/images/man.webp') center/cover no-repeat;
+
+}
+
+#hairstylers {
+    background: url('/booking/assets/images/hairdressers.webp') center/cover no-repeat;
+}
+
+.right {
+    height: 700px;
+    width: 35%;
+    position: relative;
+    cursor: pointer;
+}
+
+#woman {
+    background: url('/booking/assets/images/woman2.webp') center/cover no-repeat;
+    height: 700px;
+    width: 35%;
+    position: relative;
+    cursor: pointer;
+}
+
+#early-dates {
+    background: url('/booking/assets/images/cal.webp') center/cover no-repeat;
+}
+
+.left svg {
+    position: absolute;
+    bottom: 15px;
+    left: 5px;
+}
+
+.right svg {
+    position: absolute;
+    bottom: 15px;
+    right: 5px;
+}
+
+.center {
+    width: 20%;
+    justify-content: space-around;
+    align-items: center;
+    /*! height: 100%; */
+}
+
+.center-woman {
+    cursor: pointer;
+    position: relative;
+}
+
+.center-man {
+    cursor: pointer;
+    position: relative;
+}
+
+
+
+
+.center svg {
+    fill: black;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -50px;
+    right: 50%;
+}
+
+.center-early-dates {
+    width: 100%;
+    display: grid;
+    place-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.center-hairstyler {
+    width: 100%;
+    display: grid;
+    place-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.back-ct {
+    justify-content: center;
+    margin-block: 30px;
+}
+
+.back {
+    display: block;
+    cursor: pointer;
+}
+
+#back2{}

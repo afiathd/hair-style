@@ -1,0 +1,180 @@
+{
+    "woman": {
+        "wash_dry": {
+            "name": "Mosás - szárítás",
+            "types": {
+                "short": {
+                    "name": "Rövid",
+                    "data": {
+                        "price": 4500,
+                        "time": 30
+                    }
+                },
+                "medium": {
+                    "name": "Közepes",
+                    "data": {
+                        "price": 4900,
+                        "time": 40
+                    }
+                },
+                "long": {
+                    "name": "Hosszú",
+                    "data": {
+                        "price": 5900,
+                        "time": 50
+                    }
+                },
+                "extra_long": {
+                    "name": "Extra hosszú",
+                    "data": {
+                        "price": 7000,
+                        "time": 60
+                    }
+                }
+            }
+        },
+        "wash_cut_dry": {
+            "name": "Mosás - vágás - szárítás",
+            "types": {
+                "short": {
+                    "name": "Rövid",
+                    "data": {
+                        "price": 6100,
+                        "time": 50
+                    }
+                },
+                "medium": {
+                    "name": "Közepes",
+                    "data": {
+                        "price": 6800,
+                        "time": 60
+                    }
+                },
+                "long": {
+                    "name": "Hosszú",
+                    "data": {
+                        "price": 7800,
+                        "time": 70
+                    }
+                },
+                "extra_long": {
+                    "name": "Extra hosszú",
+                    "data": {
+                        "price": 8500,
+                        "time": 80
+                    }
+                }
+            }
+        },
+        "curvy_cut": {
+            "name": "Göndör haj vágás",
+            "types": {
+                "short": {
+                    "name": "Rövid",
+                    "data": {
+                        "price": 7100,
+                        "time": 40
+                    }
+                },
+                "medium": {
+                    "name": "Közepes",
+                    "data": {
+                        "price": 8500,
+                        "time": 50
+                    }
+                },
+                "long": {
+                    "name": "Hosszú",
+                    "data": {
+                        "price": 9500,
+                        "time": 60
+                    }
+                },
+                "extra_long": {
+                    "name": "Extra hosszú",
+                    "data": {
+                        "price": 11500,
+                        "time": 70
+                    }
+                }
+            }
+        },
+        "cut": {
+            "name": "Vágás",
+            "types": {
+                "price": 4500,
+                "time": 30
+            }
+        },
+        "straightening": {
+            "name": "Haj egyenesítés",
+            "types": {
+                "short": {
+                    "name": "Rövid",
+                    "data": {
+                        "price": 2500,
+                        "time": 20
+                    }
+                },
+                "medium": {
+                    "name": "Közepes",
+                    "data": {
+                        "price": 3500,
+                        "time": 30
+                    }
+                },
+                "long": {
+                    "name": "Hosszú",
+                    "data": {
+                        "price": 4500,
+                        "time": 30
+                    }
+                },
+                "extra_long": {
+                    "name": "Extra hosszú",
+                    "data": {
+                        "price": 6000,
+                        "time": 40
+                    }
+                }
+            }
+        },
+        "fufru_cut": {
+            "name": "Fufru vágás",
+            "types": {
+                "price": 4500,
+                "time": 30
+            }
+        },
+        "girl": {
+            "name": "Kislány hajvágás",
+            "types": {
+                "price": 4000,
+                "time": 30
+            }
+        }
+    },
+    "man": {
+        "cut": {
+            "name": "Vágás",
+            "types": {
+                "price": 4000,
+                "time": 20
+            }
+        },
+        "cut_wash_dry_finish": {
+            "name": "Mosás - vágás - szárítás",
+            "types": {
+                "price": 4500,
+                "time": 40
+            }
+        },
+        "boy": {
+            "name": "Kisfiú hajvágás",
+            "types": {
+                "price": 4000,
+                "time": 20
+            }
+        }
+    }
+}

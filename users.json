@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Elek",
+        "password": "$2b$10$LQEnBhKNS3SrRBDcvWG4u.Jiv5pxg0EGypbXtwMUe2DbF9H3ec87O",
+        "_comment": "bakker"
+    },
+    {
+        "name": "Admin",
+        "password": "$2b$10$XahN/XuGGWDYYtPEIxnYGefOzMNgc4UKV.gX2d7A2oYSX7baIcpOS" ,
+        "_comment": "admin"
+    }
+]

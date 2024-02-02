@@ -1,0 +1,173 @@
+
+
+body{
+  background-color: #d5bf955e;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.cal-center {
+  width: 800px;
+  background-color: #ffffff7b;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 20px 70px 20px gray;
+  min-width: 250px;
+  margin: 50px;
+  padding: 20px;
+}
+
+.now-ct {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 85%;
+  margin-top: 20px;
+  gap: 30px;
+  flex-wrap: wrap;
+  height: 200px;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+.now {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.n-year {}
+
+.n-month {}
+
+.n-date {}
+
+.n-day{}
+
+.name-day {
+  width: 25%;
+  line-height: 30px;
+}
+
+.container{
+  width: 100%;
+  height: 100%;
+}
+
+.cal-ct {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.nav {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-block: 20px;
+}
+
+.prev {
+  cursor: pointer;
+}
+
+.month {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.next {
+  cursor: pointer;
+}
+
+.days {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 85%;
+  font-size: 1.25rem;
+  font-weight: 600;
+  height: 40px;
+}
+
+
+.cal {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  align-items: center;
+}
+
+.cal-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-block: 5px;
+}
+
+
+
+.box {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+
+
+.date {
+  background: none;
+  border: 0px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+}
+
+.title {
+  margin: 10px 30px;
+  text-wrap: balance;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+.cal-pic-item {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cal-pic-item img {
+  width: 180px;
+  height: 180px;
+}
+
+.active {
+  cursor: pointer;
+}
+
+.active:hover {
+  background-color: #7ad67f85;
+}
+
+.inactive:hover {
+  background-color: #c9565685;
+}
+
+.today {
+  background: #d3d5a585;
+}
