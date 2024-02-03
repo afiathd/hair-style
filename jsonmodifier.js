@@ -30,7 +30,8 @@ class JSONModifier {
     async update(data, id){
         const jsonData = await this.read();
         const edited = jsonData.find(element => element.id === id);
-        console.log(edited)
+
+
         if(edited){
             Object.assign(edited, data);
             return fsp.writeFile(this.filePath, JSON.stringify(jsonData));

@@ -27,7 +27,6 @@ class Card{
 
             <div class="appointmets" id="app-${this.id}"></div>
             
-            <button id="sub-${this.id}" type="submit">Szerkesztés</button>
         `;
 
     }

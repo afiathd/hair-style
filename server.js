@@ -161,6 +161,39 @@ app.get('/booked/:date', async (req, res) => {
 });
 
 
+app.delete('/deleteAppointment/:id', (req, res) => {
+    console.log(req.params.id);
+    
+    jsonIdopontok.delete(req.params.id);
+
+    res.status(200).json({delete: "Sikeres törlés!"});
+
+});
+
+
+app.patch('/editAppointment/:id', (req, res) => {
+    console.log(req.params.id);
+    console.log(req.body);
+    
+    jsonIdopontok.update({
+        name: req.body.name,
+        selectedTime: req.body.selectedTime, 
+        tel: req.body.tel, 
+        email: req.body.email,
+        projectName: req.body.projectName,
+        duration: req.body.duration,
+        price: req.body.price
+    }, 
+    parseInt(req.params.id)).then( data => {
+        res.status(200).json({edit: "Sikeres módosítás!"});
+    });
+
+    
+
+});
+
+
+
 app.get('/logout', (req, res) => {
     res.clearCookie("auth_token");
     res.redirect('/');

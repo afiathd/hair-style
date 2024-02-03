@@ -82,3 +82,18 @@
   color: grey;
   border: none;
 }
+
+.appointment{
+  margin-block: 30px;
+  margin-inline: 15px;
+  background-color: bisque;
+  padding: 10px;
+}
+
+.list{}
+
+.list-item * {
+  margin-block: 5px;
+}
+
+.edit{justify-content: space-around;}

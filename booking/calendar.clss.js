@@ -31,8 +31,8 @@ class Calendar {
         return this.currentDate.getMonth();
     }
 
-    getTolocalDatetsr() {
-        return this.currentDate.toLocaleDateString().replaceAll('. ', '-').slice(0,-1);
+    getTolocalDatetsr(date) {
+        return date.toLocaleDateString().replaceAll('. ', '-').slice(0,-1);
     }
 
     getCurrentMonthName() {
@@ -83,14 +83,18 @@ class Calendar {
         /*  hónapot megelőző napok, ha vannak  */
 
         if (this.getFirstDayOfMonth() != 1) {
+
             let prevDays = this.getFirstDayOfMonth() - 1;
+
+            let datasetDate = new Date(this.getCurrentYear(), this.getCurrentMonth()-1, this.getLastDateOfPrevMonth() - prevDays + 1,);
+
             for (prevDays; prevDays >= 1; prevDays--) {
                 this.dates.push({
                     status: 'inactive',
                     year: this.getCurrentYear(),
                     month: this.getCurrentMonth()-1,
                     day: this.getLastDateOfPrevMonth() - prevDays + 1,
-                    datasetDate: this.getTolocalDatetsr()
+                    datasetDate: this.getTolocalDatetsr(datasetDate)
                 });
             }
 
@@ -99,65 +103,83 @@ class Calendar {
         /* napok a mai napig */
 
         for (let i = 1; i < this.getToday(); i++) {
+
+            let datasetDate = new Date(this.getCurrentYear(), this.getCurrentMonth()-1, i);
+
             this.dates.push({
                 status: 'inactive',
                 year: this.getCurrentYear(),
                 month: this.getCurrentMonth(),
                 day: i,
-                datasetDate: this.getTolocalDatetsr()
+                datasetDate: this.getTolocalDatetsr(datasetDate)
             });
         }
 
         /* mai nap */
 
         if (this.currentDate.toLocaleDateString() < this.now.toLocaleDateString()) {
+
+            let datasetDate = new Date(this.getCurrentYear(), this.getCurrentMonth(), this.getToday());
+
             this.dates.push({
                 status: 'inactive',
                 year: this.getCurrentYear(),
                 month: this.getCurrentMonth(),
                 day: this.getToday(),
-                datasetDate: this.getTolocalDatetsr()
+                datasetDate: this.getTolocalDatetsr(datasetDate)
             });
         } else if (this.currentDate.toLocaleDateString() == this.now.toLocaleDateString()) {
+
+            let datasetDate = new Date(this.getCurrentYear(), this.getCurrentMonth(), this.getToday());
+
             this.dates.push({
                 status: 'active',
                 status2: 'today',
                 year: this.getCurrentYear(),
                 month: this.getCurrentMonth(),
                 day: this.getToday(),
-                datasetDate: this.getTolocalDatetsr()
+                datasetDate: this.getTolocalDatetsr(datasetDate)
             });
         } else if (this.currentDate.toLocaleDateString() > this.now.toLocaleDateString()) {
+
+            let datasetDate = new Date(this.getCurrentYear(), this.getCurrentMonth(), this.getToday());
+
             this.dates.push({
                 status: 'active',
                 year: this.getCurrentYear(),
                 month: this.getCurrentMonth(),
                 day: this.getToday(),
-                datasetDate: this.getTolocalDatetsr()
+                datasetDate: this.getTolocalDatetsr(datasetDate)
             });
         }
 
         /* napok a mai naptól a hónap végéig */
 
         for (let i = this.getToday() + 1; i <= this.getLastDateOfMonth(); i++) {
+
+            let datasetDate = new Date(this.getCurrentYear(), this.getCurrentMonth(), i);
+
             this.dates.push({
                 status: 'active',
                 year: this.getCurrentYear(),
                 month: this.getCurrentMonth(),
                 day: i,
-                datasetDate: this.getTolocalDatetsr()
+                datasetDate: this.getTolocalDatetsr(datasetDate)
             });
         }
 
-        /* következő hónap napjai, ha szükséges */
+        /* következő hónap napjai*/
 
         for (let i = 1; this.dates.length < 7 * this.weeks; i++) {
+
+            let datasetDate = new Date(this.getCurrentYear(),this.getCurrentMonth()+1, i);
+
             this.dates.push({
                 status: 'active',
                 year: this.getCurrentYear(),
                 month: this.getCurrentMonth()+1,
                 day: i,
-                datasetDate: this.getTolocalDatetsr()
+                datasetDate: this.getTolocalDatetsr(datasetDate)
             });
         }
 

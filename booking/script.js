@@ -184,6 +184,8 @@ function fetchCard(gender) {
 
                                 selectedDate = dateBox.dataset.date;
 
+                                console.log(selectedDate);
+
                                 selectedDay = (selectedDateStamp.getDay());
                                 selectedWorkDay = dolgozoWorkDays[selectedDay];
 
