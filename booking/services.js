@@ -77,7 +77,6 @@ async function fetchService(gen, fetchNAme, renderto) {
 
         const tpl5 = `
             <div class="button-ct service">
-                <div class="button" id="back">Vissza</div>
                 <div class="button" id="submit">Kiválaszt</div>
             </div>`;
 
@@ -86,14 +85,17 @@ async function fetchService(gen, fetchNAme, renderto) {
         const submit = document.querySelector('#submit');
 
         submit.addEventListener('click', () => {
-            return selectedService;
+
+            const alert = document.querySelector('#alert');
+
+           
+                return selectedService;
+            
+            
+            
+            
         });
 
-        const back = document.querySelector('#back');
-
-        back.addEventListener('click', () => {
-            console.log('back');
-        });
 
 
     } catch (error) {

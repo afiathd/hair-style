@@ -240,10 +240,15 @@ main {
 #back2 {}
 
 .alert-color {
-    color: var(--primary-Tomato);
+    color: red;
 }
 
 .alert-bg {
-    background-color: #e3adad5e;
-    border-color: var(--primary-Tomato);
+    background-color: #6d3434a7;
+    border-color: red;
+    padding: 10px;
+}
+
+.hl {
+    background-color: aqua;
 }

@@ -41,8 +41,26 @@ function renderCards(renderto, date) {
                 .then(res => res.json())
                 .then(bookArr => {
 
+                    bookArr.sort((a, b) => {
+                        const timeA = new Date(`2024-02-05 ${a.selectedTime.split('-')[0]}`);
+                        const timeB = new Date(`2024-02-05 ${b.selectedTime.split('-')[0]}`);
+                      
+                        if (timeA < timeB) {
+                          return -1;
+                        } else if (timeA > timeB) {
+                          return 1;
+                        } else {
+                          return 0;
+                        }
+                      });
+                      
+                      
+                      
+                      
                     //megkapjuk a foglalásokat
                     renderItems(bookArr);
+
+                    bookAr = bookArr;
 
                     bookArr.forEach(item => {
 

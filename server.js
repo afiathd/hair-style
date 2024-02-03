@@ -85,14 +85,20 @@ app.post('/booked', async (req, res) => {
     
     let bookedArr = [] ;
 
+    console.log(req.body.selectedWorker);
+    console.log(req.body.selectedDate);
+
     await jsonIdopontok.filter(idopont => {
 
         if (idopont.selectedWorker == req.body.selectedWorker && idopont.selectedDate == req.body.selectedDate) {
             
             bookedArr.push(idopont.selectedTime);
+            console.log(idopont.selectedTime);
         };
 
     });
+
+    console.log(bookedArr);
 
     res.status(200).json(bookedArr);
 });
