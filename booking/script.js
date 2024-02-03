@@ -247,12 +247,21 @@ function fetchCard(gender) {
                     <h3>Foglalásod megerősítéséhez add meg adataidat:</h3>
                     <div class="inp">
                         <label for="name">Név:</label><input type="text" id="name" value="sanyi"></input>
+                        <div id="nameAlert"></div>
                     </div>
+                    
                     <div class="inp">
                         <label for="email">Email:</label><input type="email" id="email"  value="sanyi@mail.hu"></input>
+                        <div id="emailAlert"></div>
                     </div>
+
                     <div class="inp">
                         <label for="tel">Telefon:</label><input type="tel" id="tel"  value="0612345678"></input>
+                        <div id="telAlert"></div>
+                    </div>
+
+                    <div class="alert-ct">
+                        <div class="alert" id="alert"></div>
                     </div>
     
                     <button class="button" id="success">Foglalás</button>
@@ -269,41 +278,119 @@ function fetchCard(gender) {
 
                                                 failBtn.addEventListener('click', () => location.reload())
 
-                                                succBtn.addEventListener('click', () => {
-                                                    const name = document.querySelector('#name').value.trim();
-                                                    const email = document.querySelector('#email').value.trim();
-                                                    const tel = document.querySelector('#tel').value;
+    succBtn.addEventListener('click', () => {
+        
+
+        const nameInput = document.querySelector('#name').value.trim();
+        const emailInput = document.querySelector('#email').value.trim();
+        const telInput = document.querySelector('#tel').value;
+        
+        const alertBox = document.querySelector('#alert');
+        const nameAlert = document.querySelector('#nameAlert');
+        const emailAlert = document.querySelector('#emailAlert');
+        const telAlert = document.querySelector('#telAlert');
+       
+        nameAlert.innerHTML = "";
+        emailAlert.innerHTML = "";
+        telAlert.innerHTML = "";
 
 
-                                                    const project = selectedService.project;
-                                                    const projectName = selectedService.name;
-                                                    const selectedTime = `${idopontok[idopont]}`;
-                                                    const duration = selectedService.time;
-                                                    const price = selectedService.price;
+        
+        const validator = {
+            
+            errorMessage: 'A mezőt kötelező kitölteni!',
+    
+            fields: {
+                name: {
+                    required: true,
+                    reg: /[\wöüóőúéáűí]{3,}/,
+                    errorMessage: 'A felhasználó név mező hibásan lett kitöltve!',
+                    input: nameInput,
+                    alertbox: nameAlert
+                },
+                email: {
+                    required: true,
+                    reg: /^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                    errorMessage: 'Az email mező hibásan lett kitöltve!',
+                    input: emailInput,
+                    alertbox: emailAlert
+                },
+                tel: {
+                    required: true,
+                    reg: /^(\+36|06)[0-9]0\d{7}$/,
+                    errorMessage: 'A telefon mező hibásan lett kitöltve!',
+                    input: telInput,
+                    alertbox: telAlert
+                },
+    
+            },
+            
+        };
+    
+        let isValid = true;
+    
+        for(let field in validator.fields){
+            let data = validator.fields[field];
 
-                                                    fetch('/booking', {
-                                                        method: 'POST',
-                                                        headers: {
-                                                            "Content-Type": "application/json"
-                                                        },
-                                                        body: JSON.stringify({ name, email, tel, selectedWorker, selectedGen, project, projectName, selectedDate, selectedTime, 
-                                                        duration,
-                                                        price })
+            console.log(data.reg);
+            console.log(data.required);
+    
+            if(!data.reg.test(data.input) && data.required 
+            || 
+            !data.reg.test(data.input) && !data.required && data.input.length > 0)
+                {
+                    console.log('ittabaj');
+                data.alertbox.innerHTML = data.errorMessage;
+                isValid = false;     
+            }
+    
+            if(data.required && data.input == ''){
 
-                                                    })
-                                                        .then((res) => res.json())
-                                                        .then((message) => {
+                console.log('otta baj');
+                data.alertbox.innerHTML = validator.errorMessage;
+                isValid = false;
+                 
+            }
+            
+        }
+    
+        if(isValid == true){
+    
+            const name = nameInput;
+            const email = emailInput;
+            const tel = telInput;
+    
+            const project = selectedService.project;
+            const projectName = selectedService.name;
+            const selectedTime = `${idopontok[idopont]}`;
+            const duration = selectedService.time;
+            const price = selectedService.price;
 
-                                                            renderto.innerHTML = `
+            fetch('/booking', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ name, email, tel, selectedWorker, selectedGen, project, projectName, selectedDate, selectedTime, 
+                duration,
+                price })
+
+                })
+                .then((res) => res.json())
+                .then((message) => {
+
+                    console.log(message.success);
+                    renderto.innerHTML = `
                         <div class="card item">
     
-                        <h1>${message.success}</h1>
+                            <h1>${message.success}</h1>
 
                         <button class="button" id="ok"><a href="/">Bezár</a></button>
                         </div>`
 
 
                                                         });
+                                                    }
 
                                                 })
 

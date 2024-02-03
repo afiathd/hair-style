@@ -237,4 +237,13 @@ main {
     cursor: pointer;
 }
 
-#back2{}
+#back2 {}
+
+.alert-color {
+    color: var(--primary-Tomato);
+}
+
+.alert-bg {
+    background-color: #e3adad5e;
+    border-color: var(--primary-Tomato);
+}
