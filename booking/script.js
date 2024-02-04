@@ -239,8 +239,8 @@ cal.event().forEach(dateBox => {
                 items.forEach(item => {
                     item.addEventListener('click', () => {
 
-                        slsel(item);
-                      
+                        slselec(item);
+                        console.log(item.id);
 
                         selectedTime = item.id;
                     });
@@ -305,7 +305,7 @@ cal.event().forEach(dateBox => {
 
 
 
-function slsel(el){
+function slselec(el){
     let hls = document.querySelectorAll('.hl')
     hls.forEach(hl => hl.classList.remove('hl'))
     el.classList.add('hl');
@@ -508,9 +508,11 @@ function validation(nameInput, emailInput, telInput, alertBox, nameAlert, emailA
             .then((res) => res.json())
             .then((message) => {
 
+                
+
                 console.log(message.success);
                 renderto.innerHTML = `
-<div class="card item">
+<div class="card item alert-ct">
 
 <h1>${message.success}</h1>
 

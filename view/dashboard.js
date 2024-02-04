@@ -173,6 +173,10 @@ function editItem(item, date) {
             .then((message) => {
                 console.log(message.edit);
 
+                const alertCt = document.querySelector('.alert-ct');
+                                    
+                                    
+
                 const editMsg = `
                     <div class="card item">
 
@@ -181,7 +185,8 @@ function editItem(item, date) {
                         <button class="button" id="ok">Bezár</button>
                     </div>`;
 
-                renderto.innerHTML = editMsg;
+               
+                alertCt.innerHTML = editMsg;
 
                 const ok = document.querySelector('#ok');
                 ok.addEventListener('click', () => {
@@ -210,6 +215,8 @@ function delItem(id, renderto, date) {
         .then((message) => {
             console.log(message.delete);
 
+            const alertCt = document.querySelector('.alert-ct');
+
             const delMsg = `
                 <div class="card item">
 
@@ -218,11 +225,11 @@ function delItem(id, renderto, date) {
                     <button class="button" id="ok">Bezár</button>
                 </div>`;
 
-            renderto.innerHTML = delMsg;
+            alertCt.innerHTML = delMsg;
 
             const ok = document.querySelector('#ok');
             ok.addEventListener('click', () => {
-                renderCards(renderto, date);
+                renderDates(date);
             });
 
         });
