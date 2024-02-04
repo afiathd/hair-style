@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
     <title>Login</title>
 </head>
+
 <body>
-    <h1>Kérlek jelentkezz be</h1>
-    <div id="content">
-        <div>
-            <input type="text" name="name" id="name" placeholder="Felhasználónév" value="Admin">
-        </div>
-        <div>
-            <input type="password" name="password" id="password" placeholder="Jelszó" value="admin">
-        </div>
-        <div>
-            <button id="submit">Bejelentkezés</button>
-        </div>
+    <main class="flex-col">
+        <div class="flex-col normal-width" id="content">
+            <div class="login">
+                <h1>Kérlek jelentkezz be</h1>
+                <div class="inp">
+                    <span>felhasználónév:</span>
+                    <input type="text" name="name" id="name" placeholder="Felhasználónév" value="Admin">
+                </div>
+                <div class="inp">
+                    <span>jelszó:</span>
+                    <input type="password" name="password" id="password" placeholder="Jelszó" value="admin">
+                </div>
+                <div class="btn">
+                    <button id="submit">Bejelentkezés</button>
+                </div>
+            </div>
+            
+    </main>
     </div>
     <script src="login.js"></script>
 </body>
+
 </html>

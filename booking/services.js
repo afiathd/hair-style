@@ -16,22 +16,37 @@ async function fetchService(gen, fetchNAme, renderto) {
     try {
         let services = await request(`http://localhost:3000/${fetchNAme}`);
         renderto = document.querySelector('#content');
+
+        renderto.insertAdjacentHTML('afterbegin', '<div class="type-ct"></div>');
+        
+        const typeCt = document.querySelector('.type-ct');
+
         services = services[gen];
 
         const serviceNames = Object.keys(services);
 
         serviceNames.forEach( service => {
 
-            const tpl1 = `<div class="service" id="service-${service}">${services[service].name}</div>`;
 
-            renderto.insertAdjacentHTML('beforeend', tpl1);
+            const tpl1 = `
+            <div class="service" id="service-${service}">
+                <div class="service-name">${services[service].name}</div>
+                <div class="service-ct" id="service-${service}-ct"></div>
+            </div>
+            
+            `;
+
+            typeCt.insertAdjacentHTML('beforeend', tpl1);
+
+
+
           
             if(Object.keys(services[service].types).length <= 2){
                 const div = document.createElement('div');
                 div.classList.add('type');
                 div.setAttribute('id', `type-${service}`);
                 div.dataset.id = `${service}`;
-                const servDiv = document.querySelector(`#service-${service}`);
+                const servDiv = document.querySelector(`#service-${service}-ct`);
                 servDiv.insertAdjacentElement('beforeend', div);
                 div.insertAdjacentText('afterbegin', services[service].name)
                 
@@ -50,7 +65,7 @@ async function fetchService(gen, fetchNAme, renderto) {
           
                     const tpl3 = `<div class="type" id="type-${service}-${serv}" data-id="${service}-${serv}">${services[service].types[serv].name}</div>`;
 
-                    const servDiv = document.querySelector(`#service-${service}`);
+                    const servDiv = document.querySelector(`#service-${service}-ct`);
 
                     servDiv.insertAdjacentHTML('beforeend',tpl3)
 
@@ -61,7 +76,7 @@ async function fetchService(gen, fetchNAme, renderto) {
                     const tpl4 = `
                     <div class="price" id="${service}-price">
                         <span class='data' data-price='${services[service].types[serv].data.price}'>Ár: ${services[service].types[serv].data.price} Ft.</span>
-                        <span class='data' data-time='${services[service].types[serv].data.time}'>időtartam: ${services[service].types[serv].data.time} perc.</span>
+                        <span class='data' data-time='${services[service].types[serv].data.time}'>Időtartam: ${services[service].types[serv].data.time} perc.</span>
                     </div>`;
                     
                     typeDiv.insertAdjacentHTML('beforeend', tpl4);
@@ -76,7 +91,7 @@ async function fetchService(gen, fetchNAme, renderto) {
         });
 
         const tpl5 = `
-            <div class="button-ct service">
+            <div class="button-ct">
                 <div class="button" id="submit">Kiválaszt</div>
             </div>`;
 

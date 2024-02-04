@@ -81,6 +81,11 @@ function fetchCard(gender) {
                             alert.innerHTML = 'Válassz szolgáltatást!';
                             alert.classList.add('alert-bg');
 
+                            setTimeout(function() {
+                                alert.innerHTML = "";
+                                alert.classList.remove('alert-bg');
+                            }, 1800);
+
                         } else {
 
 /* ----------------------- CALENDAR ------------------------------------- */
@@ -88,7 +93,7 @@ function fetchCard(gender) {
 
                             renderto.innerHTML = '';
                             alert.innerHTML = '';
-                            alert.classList.remove('alert');
+                            alert.classList.remove('alert-bg');
 
                             
 
@@ -191,11 +196,6 @@ function fetchCard(gender) {
 
 cal.event().forEach(dateBox => {
     dateBox.addEventListener('click', () => {
-
-        /* reeDatesFunc(dateBox);
-
-        function freeDatesFunc(datebox){ */
-
         
 
         let date = dateBox.attributes.value.value;
@@ -322,11 +322,16 @@ function renderFreeDates(idopontok) {
 
     const ct = document.querySelector('.date-ct')
     const div = document.createElement('div');
-    div.classList.add('list');
+    div.classList.add('details');
     ct.appendChild(div);
 
     div.innerHTML = '';
-    div.innerText = 'Szabad időpontok:'
+    
+    div.insertAdjacentHTML('beforeend', `<div class="free-date">${selectedDate}</div>`);
+
+    const div2 = document.createElement('div');
+    div2.classList.add('list');
+    ct.insertAdjacentElement("beforeend",div2);
 
     const dateSucTpl = `
         <div class="suc-ct">
@@ -334,6 +339,7 @@ function renderFreeDates(idopontok) {
         </div>
     `
     ct.insertAdjacentHTML('beforeend', dateSucTpl);
+
 
     let items = [];
 
@@ -352,7 +358,7 @@ function renderFreeDates(idopontok) {
 <div class='item' id='${idopontok[idopont]}'>${start} - ${end}</div>
 `;
 
-        div.insertAdjacentHTML('beforeend', tpl1);
+        div2.insertAdjacentHTML('beforeend', tpl1);
 
         let item = document.getElementById(`${idopontok[idopont]}`)
         items.push(item)
@@ -376,32 +382,30 @@ function renderFreeDates(idopontok) {
 function success(renderto) {
     let success = `
         <div class="success">
-        <div class="card item">
+            <div class="form-ct">
 
-        <h1>Köszönjük, hogy minket választottál!</h1>
-        <h3>Foglalásod megerősítéséhez add meg adataidat:</h3>
-        <div class="inp">
-        <label for="name">Név:</label><input type="text" id="name" value="sanyi"></input>
-        <div id="nameAlert"></div>
-        </div>
-
-        <div class="inp">
-        <label for="email">Email:</label><input type="email" id="email"  value="sanyi@mail.hu"></input>
-        <div id="emailAlert"></div>
-        </div>
-
-        <div class="inp">
-        <label for="tel">Telefon:</label><input type="tel" id="tel"  value="0612345678"></input>
-        <div id="telAlert"></div>
-        </div>
-
-        <div class="alert-ct">
-        <div class="alert" id="alert"></div>
-        </div>
-
-        <button class="button" id="success">Foglalás</button>
-        <button class="button" id="failed">Mégsem</button>
-        </div>
+                <h1 class="form-h1">Köszönjük, hogy minket választottál!</h1>
+                <h3 class="form-h3">Foglalásod megerősítéséhez add meg adataidat:</h3>
+                <div class="inp">
+                    <label for="name">Név:</label><input type="text" id="name" value="sanyi"></input>
+                    <div id="nameAlert"></div>
+                </div>
+                <div class="inp">
+                    <label for="email">Email:</label><input type="email" id="email"  value="sanyi@mail.hu"></input>
+                    <div id="emailAlert"></div>
+                </div>
+                <div class="inp">
+                    <label for="tel">Telefon:</label><input type="tel" id="tel"  value="0612345678"></input>
+                    <div id="telAlert"></div>
+                </div>
+                <div class="alert-ct">
+                    <div class="alert" id="alert"></div>
+                </div>
+                <div class="buttons">
+                    <button class="button" id="success">Foglalás</button>
+                    <button class="button" id="failed">Mégsem</button>
+                </div>
+            </div>
         </div>
     `;
 
@@ -510,14 +514,16 @@ function validation(nameInput, emailInput, telInput, alertBox, nameAlert, emailA
 
                 
 
-                console.log(message.success);
-                renderto.innerHTML = `
-<div class="card item alert-ct">
+            const succMsg = document.querySelector('#succ-msg');
+            const succCt = document.querySelector('.succ-ct');
+            succCt.classList.add('grid');
+            succMsg.innerHTML = `<h1>${message.success}</h1>`;
 
-<h1>${message.success}</h1>
+                setTimeout(function() {
 
-<button class="button" id="ok"><a href="/">Bezár</a></button>
-</div>`
+                    location.reload();
+                                    
+                }, 1800);
 
 
             });

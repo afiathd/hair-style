@@ -1,79 +1,81 @@
-
-/* body {
-    background-color: #d5bf955e;
-    align-items: start;
-    display: flex;
-    flex-direction: column;
-} */
-
-/* .content {
-    margin-block: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-} */
-
-
 .details {
     display: block;
     margin: 20px;
-    
+
+}
+
+.service-ct {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
 }
 
 .service {
     display: flex;
-    margin: 30px;
-    padding: 20px;
+    margin: 20px;
+    padding: 15px;
     background-color: rgba(175, 175, 175, 0.394);
-
+    flex-direction: column;
+    border: 2px black solid;
+    border-radius: 8px;
 }
 
 .type {
-    /* display: none; */
-    margin-left: 30px;
 
+    margin-top: 20px;
     border: 1px solid black;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
 }
 
+.type-ct {
+    display: flex;
+    /*! flex-direction: column; */
+    /*! flex-wrap: ; */
 
+    flex-flow: wrap;
+    width: 1000px;
+    justify-content: space-around;
+}
 
 
 .price {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    /*! padding: 0px; */
     font-weight: bold;
-    margin-left: 30px;
+    margin-left: 10px;
     margin-top: 5px;
 
 }
 
 .data {
     margin: 10px;
+    font-size: 1.1rem;
 }
 
-
-
 .hl {
-    background-color: aqua;
+    background-color: #5aa2a68f;
 }
 
 .button-ct {
-    
-    display: flex;
+
+    display: grid;
     justify-content: space-between;
-    
+
     height: 60px;
-    
+
+    place-content: center;
+    position: sticky;
+    top: 40px;
 }
 
 .button {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
     padding: 10px;
     border-radius: 8px;
+    /*! position: sticky; */
+    /*! top: 300px; */
 }

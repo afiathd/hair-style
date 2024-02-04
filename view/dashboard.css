@@ -1,4 +1,5 @@
-* *::before,
+*,
+*::before,
 *::after {
   margin: 0;
   padding: 0;
@@ -21,7 +22,28 @@ body {
 }
 
 .normal-width {
-  width: min(90%, 1680px);
+  width: min(90%, 1440px);
+}
+
+.header {
+  margin: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#logout {
+  background-color: #dfd2c8;
+  border: 2px black solid;
+  border-radius: 5px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+#logout a {
+  text-decoration: none;
+  color: black;
 }
 
 .content {}
@@ -54,16 +76,75 @@ body {
   margin-inline: 10%;
 }
 
-.d-none{
+.d-none {
   display: none;
 }
 
-.alert-ct{
-  
-  display: flex;
+
+.alert-ct {
+
+  display: none;
   position: fixed;
-  background-color: cadetblue;
+  background-color: #a3d1d2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 30px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex{
+  display: flex;
+}
+
+.alert{display: flex;flex-direction: column;justify-content: center;align-items: center;}
+
+.alert h1{margin-block: 20px;}
+
+.alert button{margin-block: 40px 0px;width: 60px;}
+
+.client-name p,
+.time p {
+
+  text-decoration: underline;
+  font-size: larger;
+}
+
+.client-name{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.list-item {}
+
+.list-item div {
+  margin-block: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.list-item span {
+  
+}
+
+svg {
+  fill: black;
+  width: 16px;
+  cursor: pointer;
+}
+
+#save {
+  margin-inline: 45%;
+}
+
+#save svg {
+  fill: black;
+  width: 20px;
+  cursor: pointer;
 }

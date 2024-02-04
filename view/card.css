@@ -83,17 +83,20 @@
   border: none;
 }
 
-.appointment{
+.appointment {
   margin-block: 30px;
   margin-inline: 15px;
   background-color: bisque;
   padding: 10px;
 }
 
-.list{}
+.list {}
 
 .list-item * {
   margin-block: 5px;
 }
 
-.edit{justify-content: space-around;}
+.edit {
+  justify-content: space-around;
+  margin-block: 20px 10px;
+}

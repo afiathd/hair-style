@@ -37,9 +37,9 @@ function auth(req, res, next){
 app.use(cookieParser());
 app.use(express.json());
 
-app.use( express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(['/booking', '/cards'] ,express.static(path.join(__dirname, 'booking')));
-app.use(['/booking/assets', '/cards'] ,express.static(path.join(__dirname, 'assets')));
+app.use(['/booking/assets', '/cards','/public/assets'] ,express.static(path.join(__dirname, 'assets')));
 app.use(['/login', '/dashboard'] ,express.static(path.join(__dirname, 'view')));
 
 
@@ -122,12 +122,12 @@ app.post('/login', async (req, res) => {
     const user = await jsonUsers.find( user => user.name == req.body.name);
 
     if (!user)
-        return res.status(404).json({msg: "Rossz azonosító név.", logged: false});
+        return res.status(404).json({msg: "Sikertelen bejelentkezés!", logged: false});
 
     const validPassword = await bcrypt.compare(req.body.password, user.password);
 
     if (!validPassword)
-        return res.status(404).json({msg: "hibás jelszó", logged: false});
+        return res.status(404).json({msg: "Sikertelen bejelentkezés!", logged: false});
 
     const tokenPayLoad = {
         username: user.name

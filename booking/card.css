@@ -1,12 +1,4 @@
-/* CSS RESET */
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 .content {
 
@@ -27,18 +19,18 @@
   align-items: center;
   margin-top: 150px;
   position: relative;
-  height: 400px;
-  box-shadow: 0 20px 70px 20px gray;
+  height: 430px;
+  box-shadow: 0 20px 70px 20px #aca6a6;
   margin-inline: 30px;
   min-width: 250px;
 }
 
 .pic-item {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   position: absolute;
-  top: -100px;
+  top: -90px;
 }
 
 .pic-item img {
@@ -49,11 +41,11 @@
 
 .name {
   font-size: 2rem;
-  margin-top: 55px;
+  margin-top: 15px;
 }
 
 .job {
-  margin-block: 15px;
+  margin-block: 10px;
 }
 
 .title {
@@ -66,7 +58,7 @@
 .card-ct button {
   position: absolute;
   bottom: 20px;
-  background: gray;
+  background: #1e1e1e;
   color: white;
   width: 40%;
   height: 35px;

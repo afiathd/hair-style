@@ -8,12 +8,21 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-backgrond: #d5bf955e;
+    --bg-layer: rgba(0, 0, 0, 0.71);
+}
+
 body {
-    background-color: #d5bf955e;
+    background-color: var(--primary-backgrond);
     align-items: center;
     display: flex;
     flex-direction: column;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+
 }
+
 
 .flex-col {
     display: flex;
@@ -27,16 +36,14 @@ body {
 }
 
 .normal-width {
-    width: min(90%, 1680px);
+    width: min(90%, 1440px);
 }
 
 header {
     background-color: black;
     height: 120px;
-    /*! justify-content: space-between; */
     align-items: center;
 }
-
 
 .header-ct {
     height: 100%;
@@ -52,39 +59,57 @@ header {
 .header-ct li {
     color: white;
     list-style: none;
-    font-size: 3rem;
+    font-size: 5rem;
     color: #ffffffa1;
 }
 
 .nav {
     display: flex;
     flex-direction: row;
-    /*! width: 80%; */
-    padding-block: 10px;
+    /*! padding-block: 10px; */
     justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 10px;
 }
 
 .nav-item {
-    background-color: #dfdfdf70;
+    background-color: #dfdfdff7;
     width: 180px;
     min-width: 110px;
     height: 35px;
     display: grid;
+    border-radius: 4px;
+    cursor: pointer;
+    place-content: center;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item:hover {
+    background-color: var(--bg-layer);
+    color: white;
+}
+
+
+.hero {
+    background: url(/public/assets/images/hero1.webp) center/cover;
+
+    width: 100vw;
+    height: 160px;
     justify-content: center;
     align-items: center;
-    border: 1px black solid;
-    /*! border-radius: 8px; */
-    cursor: pointer;
+}
+
+.layer {
+    background-color: rgba(0, 0, 0, 0.71);
+    width: 100%;
+    height: 100%;
+    align-items: center;
 }
 
 main {
     align-items: center;
-}
-
-.hero {
-    /*! background: url(/booking/assets/images/hero1.webp) center/cover; */
-    width: 100vw;
-    height: 120px;
+    min-height: 67vh;
 }
 
 
@@ -114,7 +139,10 @@ main {
     justify-content: space-between;
 }
 
-#booking-ct {}
+#booking-ct {
+    justify-content: center;
+    align-items: center;
+}
 
 .select {}
 
@@ -146,9 +174,6 @@ main {
 
 }
 
-#hairstylers {
-    background: url('/booking/assets/images/hairdressers.webp') center/cover no-repeat;
-}
 
 .right {
     height: 700px;
@@ -185,7 +210,6 @@ main {
     width: 20%;
     justify-content: space-around;
     align-items: center;
-    /*! height: 100%; */
 }
 
 .center-woman {
@@ -244,21 +268,199 @@ main {
 }
 
 .alert-bg {
-    background-color: #6d3434a7;
-    border-color: red;
-    padding: 10px;
+    padding: 40px;
+    font-size: 2rem;
 }
 
 .hl {
     background-color: aqua;
 }
 
-.alert-ct{
-  
+.alert-ct {
+
     display: flex;
     position: fixed;
-    background-color: cadetblue;
+    background-color: #db6c6ca6;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+    border-radius: 10px;
+}
+
+
+
+footer {
+    background-color: black;
+    color: white;
+    align-items: center;
+}
+
+.footer-ct {
+    margin-block: 20px;
+    align-items: end;
+    justify-content: space-between;
+    height: 100px;
+}
+
+ul {
+    height: 100%;
+}
+
+li {
+    list-style: none;
+    margin-block: 8px;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    position: relative;
+}
+
+.logo svg {
+    fill: white;
+    height: 16px;
+    position: absolute;
+    top: 5px;
+    left: 135px;
+}
+
+#contact-ct {}
+
+.f-item {
+    margin-block: 8px;
+}
+
+
+.date-ct {
+
+    height: 800px;
+    width: 500px;
+    margin-block: 50px;
+    background-color: #ffffff7b;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 20px 70px 20px gray;
+    min-width: 250px;
+
+}
+
+.free-date {
+    margin-block: 15px;
+    text-decoration-line: underline;
+    font-size: 1.5rem;
+}
+
+.list {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    height: 78%;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 240px;
+}
+
+
+.suc-ct {
+    background-color: #e4e3c6;
+    border: 2px black solid;
+    border-radius: 5px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+#date-succ {
+    border: 2;
+    margin: 8px 25px;
+}
+
+.success {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 580px;
+    justify-content: center;
+}
+
+.form-ct {
+    padding: 50px;
+    border: 2px black solid;
+}
+
+.inp {
+    margin-block: 8px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.button {
+    background-color: #e4e3c6;
+    border: 2px black solid;
+    border-radius: 5px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+
+
+.form-h1 {
+    margin-block: 20px;
+}
+
+.form-h3 {
+    margin-block: 10px;
+}
+
+
+
+.succ-ct {
+
+    display: none;
+    position: fixed;
+    background-color: #92c8a9a6;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 500px;
+    height: 100px;
+    place-content: center;
+}
+
+.succ-msg {
+    font-size: 1.2rem;
+}
+
+.grid {
+    display: grid;
+}
+
+#nameAlert,
+#emailAlert,
+#telAlert {
+
+    background: #ea7e7ea3;
+}

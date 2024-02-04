@@ -99,13 +99,6 @@
                 }
             }
         },
-        "cut": {
-            "name": "Vágás",
-            "types": {
-                "price": 4500,
-                "time": 30
-            }
-        },
         "straightening": {
             "name": "Haj egyenesítés",
             "types": {
@@ -137,6 +130,13 @@
                         "time": 40
                     }
                 }
+            }
+        },
+        "cut": {
+            "name": "Vágás",
+            "types": {
+                "price": 4500,
+                "time": 30
             }
         },
         "fufru_cut": {

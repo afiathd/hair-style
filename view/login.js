@@ -1,4 +1,6 @@
 
+const content = document.querySelector('#content');
+
 const submit = document.querySelector('#submit');
 
 submit.addEventListener('click', () => {
@@ -14,10 +16,22 @@ submit.addEventListener('click', () => {
     })
         .then( res => res.json() )
         .then( data => {
-            if (data.logged)
+            if (data.logged){
                 location.reload();
-            else 
-                alert(data.msg);
+            }else{
+                myAlert(content, data.msg);
+
+                const alertElement = document.querySelector('.alert');
+
+                setTimeout(function() {
+
+                    content.removeChild(alertElement);
+
+                }, 2000);
+            } 
+                
+
+                
         });
 });
 
@@ -35,3 +49,18 @@ pwInput.addEventListener("keypress", function(event){
     submit.click();
     }
 });
+
+
+
+
+function myAlert(renderto, msg) {
+
+
+    const alertTpl = `<div class="alert">
+    <p id="alert">${msg}</p>
+    </div>`;
+
+    renderto.insertAdjacentHTML('beforeend', alertTpl)
+
+
+} 
